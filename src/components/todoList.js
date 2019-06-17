@@ -6,14 +6,12 @@ const TodoList = ({list, handleDelete, handleComplete}) => (
             {
                 list.map(todo => (
                     <Fragment key={todo.id}>
-                        <li onClick={e => handleComplete(todo.id)}>
+                        <li onClick={ () => handleComplete(todo.id)}>
                             {
-                                todo.status === 'COMPLETED'
-                                    ? (<del>{todo.title}</del>)
-                                    : todo.title
+                                todo.status === 'COMPLETED' ? <del>{todo.title}</del> : todo.title
                             }
                         </li>
-                        <button onClick={e => handleDelete(todo.id)}>Delete</button>
+                        <button onClick={ () => handleDelete(todo.id)}>Delete</button>
                     </Fragment>
                 ))
             }
